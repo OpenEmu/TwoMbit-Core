@@ -1,0 +1,41 @@
+TwoMbit:
+	author: PiCiJi
+	licence: GPLv3
+	home: https://sourceforge.net/projects/twombit/
+
+libco:
+	author: byuu
+	licence: public domain
+	home: http://byuu.org/
+
+hermite resampler:
+	author: byuu
+	licence: GPLv3
+	home: http://byuu.org/
+
+blip_buffer:
+	author: blargg
+	licence: LGPL
+	home: http://slack.net/~ant/
+
+sms_ntsc:
+	author: blargg
+	licence: LGPL
+	home: http://slack.net/~ant/
+
+file-extractor:
+	author: blargg
+	licence: LGPL
+	home: http://code.google.com/p/file-extractor/
+
+bzip2
+	author: Julian Seward
+	licence: BSD
+	home: http://www.bzip.org/
+
+HashLib
+	author: tomanu
+	licence: CDDL
+	home: http://hashlib.codeplex.com/
+
+

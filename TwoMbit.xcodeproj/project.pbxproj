@@ -1,0 +1,950 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		82CAFB610FEDA62500CCDC7E /* Distribution */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 82CAFB710FEDA62C00CCDC7E /* Build configuration list for PBXAggregateTarget "Distribution" */;
+			buildPhases = (
+				82CAFB820FEDA6AC00CCDC7E /* CopyFiles */,
+				82CAFB600FEDA62500CCDC7E /* ShellScript */,
+			);
+			dependencies = (
+				82CAFB650FEDA62A00CCDC7E /* PBXTargetDependency */,
+			);
+			name = Distribution;
+			productName = Distribution;
+		};
+		82D8155D0F1D878700EF8CF5 /* Build & Install TwoMbit */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 82D815710F1D87B000EF8CF5 /* Build configuration list for PBXAggregateTarget "Build & Install TwoMbit" */;
+			buildPhases = (
+				82D8155C0F1D878700EF8CF5 /* ShellScript */,
+			);
+			dependencies = (
+				82D815610F1D879200EF8CF5 /* PBXTargetDependency */,
+			);
+			name = "Build & Install TwoMbit";
+			productName = "Build & Install";
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		82CAFADA0FEDA5CA00CCDC7E /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 82CAFAD90FEDA5CA00CCDC7E /* dsa_pub.pem */; };
+		82CAFDB00FEDD88100CCDC7E /* config.yaml in CopyFiles */ = {isa = PBXBuildFile; fileRef = 82CAFADD0FEDA5EA00CCDC7E /* config.yaml */; };
+		8CEB53C6174B9E960073BA33 /* z80.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8CEB52DE174B9E960073BA33 /* z80.cpp */; };
+		8CEB53C7174B9E960073BA33 /* z80_serialization.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8CEB52E0174B9E960073BA33 /* z80_serialization.cpp */; };
+		8CEB53F5174B9E960073BA33 /* hl_md5.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8CEB5334174B9E960073BA33 /* hl_md5.cpp */; };
+		8CEB53F8174B9E960073BA33 /* libco.c in Sources */ = {isa = PBXBuildFile; fileRef = 8CEB533B174B9E960073BA33 /* libco.c */; };
+		8CEB53FC174B9E960073BA33 /* benchmark.c in Sources */ = {isa = PBXBuildFile; fileRef = 8CEB5343174B9E960073BA33 /* benchmark.c */; };
+		8CEB53FD174B9E960073BA33 /* changes.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8CEB5344174B9E960073BA33 /* changes.txt */; };
+		8CEB53FF174B9E960073BA33 /* license.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8CEB5347174B9E960073BA33 /* license.txt */; };
+		8CEB5400174B9E960073BA33 /* readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8CEB5348174B9E960073BA33 /* readme.txt */; };
+		8CEB5401174B9E960073BA33 /* sms_ntsc.c in Sources */ = {isa = PBXBuildFile; fileRef = 8CEB5349174B9E960073BA33 /* sms_ntsc.c */; };
+		8CEB5402174B9E960073BA33 /* sms_ntsc.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8CEB534B174B9E960073BA33 /* sms_ntsc.txt */; };
+		8CEB5403174B9E960073BA33 /* test.bmp in Resources */ = {isa = PBXBuildFile; fileRef = 8CEB534E174B9E960073BA33 /* test.bmp */; };
+		8CEB5425174B9E960073BA33 /* libsms.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8CEB538D174B9E960073BA33 /* libsms.cpp */; };
+		8CEB5427174B9E960073BA33 /* licence.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8CEB5391174B9E960073BA33 /* licence.txt */; };
+		8CEB5428174B9E960073BA33 /* sn76489.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8CEB5394174B9E960073BA33 /* sn76489.cpp */; };
+		8CEB5429174B9E960073BA33 /* sn_serialization.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8CEB5396174B9E960073BA33 /* sn_serialization.cpp */; };
+		8CEB542A174B9E960073BA33 /* ym2413Core.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8CEB5398174B9E960073BA33 /* ym2413Core.cpp */; };
+		8CEB542B174B9E960073BA33 /* ym2413Core_tables.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8CEB539A174B9E960073BA33 /* ym2413Core_tables.cpp */; };
+		8CEB542C174B9E960073BA33 /* ym2413Core_update.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8CEB539B174B9E960073BA33 /* ym2413Core_update.cpp */; };
+		8CEB542D174B9E960073BA33 /* ymcore_serialization.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8CEB539C174B9E960073BA33 /* ymcore_serialization.cpp */; };
+		8CEB542E174B9E960073BA33 /* ym2413.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8CEB539D174B9E960073BA33 /* ym2413.cpp */; };
+		8CEB542F174B9E960073BA33 /* ym_serialization.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8CEB539F174B9E960073BA33 /* ym_serialization.cpp */; };
+		8CEB5430174B9E960073BA33 /* bus.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8CEB53A1174B9E960073BA33 /* bus.cpp */; };
+		8CEB5431174B9E960073BA33 /* bus_serialization.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8CEB53A3174B9E960073BA33 /* bus_serialization.cpp */; };
+		8CEB5432174B9E960073BA33 /* eeprom_93c46.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8CEB53A4174B9E960073BA33 /* eeprom_93c46.cpp */; };
+		8CEB5433174B9E960073BA33 /* eeprom_serialization.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8CEB53A6174B9E960073BA33 /* eeprom_serialization.cpp */; };
+		8CEB5434174B9E960073BA33 /* cart.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8CEB53A8174B9E960073BA33 /* cart.cpp */; };
+		8CEB5435174B9E960073BA33 /* cheats.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8CEB53AB174B9E960073BA33 /* cheats.cpp */; };
+		8CEB5436174B9E960073BA33 /* cpu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8CEB53AE174B9E960073BA33 /* cpu.cpp */; };
+		8CEB5437174B9E960073BA33 /* cpu_serialization.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8CEB53B0174B9E960073BA33 /* cpu_serialization.cpp */; };
+		8CEB5438174B9E960073BA33 /* gear2gear.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8CEB53B2174B9E960073BA33 /* gear2gear.cpp */; };
+		8CEB5439174B9E960073BA33 /* input.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8CEB53B5174B9E960073BA33 /* input.cpp */; };
+		8CEB543A174B9E960073BA33 /* input_serialization.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8CEB53B7174B9E960073BA33 /* input_serialization.cpp */; };
+		8CEB543B174B9E960073BA33 /* system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8CEB53BC174B9E960073BA33 /* system.cpp */; };
+		8CEB543C174B9E960073BA33 /* system_serialization.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8CEB53BE174B9E960073BA33 /* system_serialization.cpp */; };
+		8CEB543D174B9E960073BA33 /* mode0.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8CEB53C0174B9E960073BA33 /* mode0.cpp */; };
+		8CEB543E174B9E960073BA33 /* mode2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8CEB53C1174B9E960073BA33 /* mode2.cpp */; };
+		8CEB543F174B9E960073BA33 /* mode4.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8CEB53C2174B9E960073BA33 /* mode4.cpp */; };
+		8CEB5440174B9E960073BA33 /* vdp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8CEB53C3174B9E960073BA33 /* vdp.cpp */; };
+		8CEB5441174B9E960073BA33 /* vdp_serialization.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8CEB53C5174B9E960073BA33 /* vdp_serialization.cpp */; };
+		8CEB5451174BD78E0073BA33 /* Blip_Buffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8CEB544B174BD78E0073BA33 /* Blip_Buffer.cpp */; };
+		8CEB5452174BD78E0073BA33 /* changes.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8CEB544D174BD78E0073BA33 /* changes.txt */; };
+		8CEB5453174BD78E0073BA33 /* LGPL.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8CEB544E174BD78E0073BA33 /* LGPL.txt */; };
+		8CEB5454174BD78E0073BA33 /* notes.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8CEB544F174BD78E0073BA33 /* notes.txt */; };
+		8CEB5455174BD78E0073BA33 /* readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8CEB5450174BD78E0073BA33 /* readme.txt */; };
+		8CEB545B174C204F0073BA33 /* color.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8CEB5457174C204F0073BA33 /* color.cpp */; };
+		8CEB545C174C204F0073BA33 /* direct.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8CEB5459174C204F0073BA33 /* direct.cpp */; };
+		8CEB545D174C204F0073BA33 /* ntsc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8CEB545A174C204F0073BA33 /* ntsc.cpp */; };
+		8CEB5461174C46490073BA33 /* resampler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8CEB545F174C46490073BA33 /* resampler.cpp */; };
+		8D5B49B0048680CD000E48DA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C167DFE841241C02AAC07 /* InfoPlist.strings */; };
+		8D5B49B4048680CD000E48DA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		C66DFC1A0F51D82F0080AA28 /* SMSGameCore.mm in Sources */ = {isa = PBXBuildFile; fileRef = C66DFC180F51D82F0080AA28 /* SMSGameCore.mm */; };
+		C6D120E91711302600E868A8 /* OpenEmuBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6D120E71711302600E868A8 /* OpenEmuBase.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		82CAFB640FEDA62A00CCDC7E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 089C1669FE841209C02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8D5B49AC048680CD000E48DA;
+			remoteInfo = CrabEmu;
+		};
+		82D815600F1D879200EF8CF5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 089C1669FE841209C02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8D5B49AC048680CD000E48DA;
+			remoteInfo = CrabEmu;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		82CAFB820FEDA6AC00CCDC7E /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 16;
+			files = (
+				82CAFDB00FEDD88100CCDC7E /* config.yaml in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		089C1672FE841209C02AAC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		089C167EFE841241C02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		089C167FFE841241C02AAC07 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
+		1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		8291C4E21489595000A72540 /* OEGGSystemResponderClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OEGGSystemResponderClient.h; path = ../OpenEmu/GameGear/OEGGSystemResponderClient.h; sourceTree = "<group>"; };
+		82CAFAD90FEDA5CA00CCDC7E /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
+		82CAFADD0FEDA5EA00CCDC7E /* config.yaml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = config.yaml; sourceTree = "<group>"; };
+		8CEB52DB174B9E960073BA33 /* mem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mem.h; sourceTree = "<group>"; };
+		8CEB52DC174B9E960073BA33 /* opcodes.t.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = opcodes.t.h; sourceTree = "<group>"; };
+		8CEB52DD174B9E960073BA33 /* regs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = regs.h; sourceTree = "<group>"; };
+		8CEB52DE174B9E960073BA33 /* z80.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = z80.cpp; sourceTree = "<group>"; };
+		8CEB52DF174B9E960073BA33 /* z80.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = z80.h; sourceTree = "<group>"; };
+		8CEB52E0174B9E960073BA33 /* z80_serialization.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = z80_serialization.cpp; sourceTree = "<group>"; };
+		8CEB5316174B9E960073BA33 /* dataTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dataTypes.h; sourceTree = "<group>"; };
+		8CEB5334174B9E960073BA33 /* hl_md5.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = hl_md5.cpp; sourceTree = "<group>"; };
+		8CEB5335174B9E960073BA33 /* hl_md5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hl_md5.h; sourceTree = "<group>"; };
+		8CEB5336174B9E960073BA33 /* hl_types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hl_types.h; sourceTree = "<group>"; };
+		8CEB5337174B9E960073BA33 /* helper.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; path = helper.h; sourceTree = "<group>"; };
+		8CEB5339174B9E960073BA33 /* amd64.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = amd64.c; sourceTree = "<group>"; };
+		8CEB533A174B9E960073BA33 /* fiber.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fiber.c; sourceTree = "<group>"; };
+		8CEB533B174B9E960073BA33 /* libco.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = libco.c; sourceTree = "<group>"; };
+		8CEB533C174B9E960073BA33 /* libco.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = libco.h; sourceTree = "<group>"; };
+		8CEB533D174B9E960073BA33 /* ppc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ppc.c; sourceTree = "<group>"; };
+		8CEB533E174B9E960073BA33 /* sjlj.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sjlj.c; sourceTree = "<group>"; };
+		8CEB533F174B9E960073BA33 /* x86.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = x86.c; sourceTree = "<group>"; };
+		8CEB5341174B9E960073BA33 /* serializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = serializer.h; sourceTree = "<group>"; };
+		8CEB5343174B9E960073BA33 /* benchmark.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = benchmark.c; sourceTree = "<group>"; };
+		8CEB5344174B9E960073BA33 /* changes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = changes.txt; sourceTree = "<group>"; };
+		8CEB5345174B9E960073BA33 /* demo.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = demo.c; sourceTree = "<group>"; };
+		8CEB5346174B9E960073BA33 /* demo_impl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = demo_impl.h; sourceTree = "<group>"; };
+		8CEB5347174B9E960073BA33 /* license.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = license.txt; sourceTree = "<group>"; };
+		8CEB5348174B9E960073BA33 /* readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = readme.txt; sourceTree = "<group>"; };
+		8CEB5349174B9E960073BA33 /* sms_ntsc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sms_ntsc.c; sourceTree = "<group>"; };
+		8CEB534A174B9E960073BA33 /* sms_ntsc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sms_ntsc.h; sourceTree = "<group>"; };
+		8CEB534B174B9E960073BA33 /* sms_ntsc.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sms_ntsc.txt; sourceTree = "<group>"; };
+		8CEB534C174B9E960073BA33 /* sms_ntsc_config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sms_ntsc_config.h; sourceTree = "<group>"; };
+		8CEB534D174B9E960073BA33 /* sms_ntsc_impl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sms_ntsc_impl.h; sourceTree = "<group>"; };
+		8CEB534E174B9E960073BA33 /* test.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = test.bmp; sourceTree = "<group>"; };
+		8CEB5350174B9E960073BA33 /* _string.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _string.h; sourceTree = "<group>"; };
+		8CEB5351174B9E960073BA33 /* qstring.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = qstring.cpp; sourceTree = "<group>"; };
+		8CEB5352174B9E960073BA33 /* qstring.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = qstring.h; sourceTree = "<group>"; };
+		8CEB538D174B9E960073BA33 /* libsms.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = libsms.cpp; sourceTree = "<group>"; };
+		8CEB538E174B9E960073BA33 /* libsms.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = libsms.h; sourceTree = "<group>"; };
+		8CEB5390174B9E960073BA33 /* libsms_global.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = libsms_global.h; sourceTree = "<group>"; };
+		8CEB5391174B9E960073BA33 /* licence.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = licence.txt; sourceTree = "<group>"; };
+		8CEB5394174B9E960073BA33 /* sn76489.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = sn76489.cpp; sourceTree = "<group>"; };
+		8CEB5395174B9E960073BA33 /* sn76489.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sn76489.h; sourceTree = "<group>"; };
+		8CEB5396174B9E960073BA33 /* sn_serialization.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = sn_serialization.cpp; sourceTree = "<group>"; };
+		8CEB5398174B9E960073BA33 /* ym2413Core.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ym2413Core.cpp; sourceTree = "<group>"; };
+		8CEB5399174B9E960073BA33 /* ym2413Core.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ym2413Core.h; sourceTree = "<group>"; };
+		8CEB539A174B9E960073BA33 /* ym2413Core_tables.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ym2413Core_tables.cpp; sourceTree = "<group>"; };
+		8CEB539B174B9E960073BA33 /* ym2413Core_update.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ym2413Core_update.cpp; sourceTree = "<group>"; };
+		8CEB539C174B9E960073BA33 /* ymcore_serialization.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ymcore_serialization.cpp; sourceTree = "<group>"; };
+		8CEB539D174B9E960073BA33 /* ym2413.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ym2413.cpp; sourceTree = "<group>"; };
+		8CEB539E174B9E960073BA33 /* ym2413.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ym2413.h; sourceTree = "<group>"; };
+		8CEB539F174B9E960073BA33 /* ym_serialization.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ym_serialization.cpp; sourceTree = "<group>"; };
+		8CEB53A1174B9E960073BA33 /* bus.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = bus.cpp; sourceTree = "<group>"; };
+		8CEB53A2174B9E960073BA33 /* bus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bus.h; sourceTree = "<group>"; };
+		8CEB53A3174B9E960073BA33 /* bus_serialization.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = bus_serialization.cpp; sourceTree = "<group>"; };
+		8CEB53A4174B9E960073BA33 /* eeprom_93c46.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = eeprom_93c46.cpp; sourceTree = "<group>"; };
+		8CEB53A5174B9E960073BA33 /* eeprom_93c46.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = eeprom_93c46.h; sourceTree = "<group>"; };
+		8CEB53A6174B9E960073BA33 /* eeprom_serialization.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = eeprom_serialization.cpp; sourceTree = "<group>"; };
+		8CEB53A8174B9E960073BA33 /* cart.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = cart.cpp; sourceTree = "<group>"; };
+		8CEB53A9174B9E960073BA33 /* cart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cart.h; sourceTree = "<group>"; };
+		8CEB53AB174B9E960073BA33 /* cheats.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = cheats.cpp; sourceTree = "<group>"; };
+		8CEB53AC174B9E960073BA33 /* cheats.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cheats.h; sourceTree = "<group>"; };
+		8CEB53AE174B9E960073BA33 /* cpu.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = cpu.cpp; sourceTree = "<group>"; };
+		8CEB53AF174B9E960073BA33 /* cpu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cpu.h; sourceTree = "<group>"; };
+		8CEB53B0174B9E960073BA33 /* cpu_serialization.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = cpu_serialization.cpp; sourceTree = "<group>"; };
+		8CEB53B2174B9E960073BA33 /* gear2gear.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = gear2gear.cpp; sourceTree = "<group>"; };
+		8CEB53B3174B9E960073BA33 /* gear2gear.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gear2gear.h; sourceTree = "<group>"; };
+		8CEB53B5174B9E960073BA33 /* input.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = input.cpp; sourceTree = "<group>"; };
+		8CEB53B6174B9E960073BA33 /* input.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = input.h; sourceTree = "<group>"; };
+		8CEB53B7174B9E960073BA33 /* input_serialization.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = input_serialization.cpp; sourceTree = "<group>"; };
+		8CEB53B8174B9E960073BA33 /* mem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mem.h; sourceTree = "<group>"; };
+		8CEB53B9174B9E960073BA33 /* processor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = processor.h; sourceTree = "<group>"; };
+		8CEB53BB174B9E960073BA33 /* interface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = interface.h; sourceTree = "<group>"; };
+		8CEB53BC174B9E960073BA33 /* system.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = system.cpp; sourceTree = "<group>"; };
+		8CEB53BD174B9E960073BA33 /* system.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = system.h; sourceTree = "<group>"; };
+		8CEB53BE174B9E960073BA33 /* system_serialization.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = system_serialization.cpp; sourceTree = "<group>"; };
+		8CEB53C0174B9E960073BA33 /* mode0.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mode0.cpp; sourceTree = "<group>"; };
+		8CEB53C1174B9E960073BA33 /* mode2.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mode2.cpp; sourceTree = "<group>"; };
+		8CEB53C2174B9E960073BA33 /* mode4.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mode4.cpp; sourceTree = "<group>"; };
+		8CEB53C3174B9E960073BA33 /* vdp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = vdp.cpp; sourceTree = "<group>"; };
+		8CEB53C4174B9E960073BA33 /* vdp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vdp.h; sourceTree = "<group>"; };
+		8CEB53C5174B9E960073BA33 /* vdp_serialization.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = vdp_serialization.cpp; sourceTree = "<group>"; };
+		8CEB544B174BD78E0073BA33 /* Blip_Buffer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Blip_Buffer.cpp; sourceTree = "<group>"; };
+		8CEB544C174BD78E0073BA33 /* Blip_Buffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Blip_Buffer.h; sourceTree = "<group>"; };
+		8CEB544D174BD78E0073BA33 /* changes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = changes.txt; sourceTree = "<group>"; };
+		8CEB544E174BD78E0073BA33 /* LGPL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LGPL.txt; sourceTree = "<group>"; };
+		8CEB544F174BD78E0073BA33 /* notes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = notes.txt; sourceTree = "<group>"; };
+		8CEB5450174BD78E0073BA33 /* readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = readme.txt; sourceTree = "<group>"; };
+		8CEB5457174C204F0073BA33 /* color.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = color.cpp; sourceTree = "<group>"; };
+		8CEB5458174C204F0073BA33 /* color.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; path = color.h; sourceTree = "<group>"; };
+		8CEB5459174C204F0073BA33 /* direct.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = direct.cpp; sourceTree = "<group>"; };
+		8CEB545A174C204F0073BA33 /* ntsc.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ntsc.cpp; sourceTree = "<group>"; };
+		8CEB545F174C46490073BA33 /* resampler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = resampler.cpp; sourceTree = "<group>"; };
+		8CEB5460174C46490073BA33 /* resampler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = resampler.h; sourceTree = "<group>"; };
+		8D5B49B6048680CD000E48DA /* TwoMbit.oecoreplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TwoMbit.oecoreplugin; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D5B49B7048680CD000E48DA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		946C18AF171491B300C64BF9 /* OESG1000SystemResponderClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OESG1000SystemResponderClient.h; path = "../OpenEmu/SG-1000/OESG1000SystemResponderClient.h"; sourceTree = "<group>"; };
+		C66DFC180F51D82F0080AA28 /* SMSGameCore.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SMSGameCore.mm; sourceTree = "<group>"; };
+		C66DFC190F51D82F0080AA28 /* SMSGameCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMSGameCore.h; sourceTree = "<group>"; };
+		C6B3E67C1365255700D34947 /* OESMSSystemResponderClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OESMSSystemResponderClient.h; path = ../OpenEmu/SegaMasterSystem/OESMSSystemResponderClient.h; sourceTree = "<group>"; };
+		C6D120E71711302600E868A8 /* OpenEmuBase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OpenEmuBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2F7E65807B2D6F200F64583 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8D5B49B3048680CD000E48DA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C6D120E91711302600E868A8 /* OpenEmuBase.framework in Frameworks */,
+				8D5B49B4048680CD000E48DA /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		089C166AFE841209C02AAC07 /* CrabEmu */ = {
+			isa = PBXGroup;
+			children = (
+				8CEB52D8174B9D420073BA33 /* Core */,
+				08FB77AFFE84173DC02AAC07 /* Classes */,
+				32C88E010371C26100C91783 /* Other Sources */,
+				089C167CFE841241C02AAC07 /* Resources */,
+				089C1671FE841209C02AAC07 /* Frameworks and Libraries */,
+				19C28FB8FE9D52D311CA2CBB /* Products */,
+			);
+			name = CrabEmu;
+			sourceTree = "<group>";
+		};
+		089C1671FE841209C02AAC07 /* Frameworks and Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				C6D120E71711302600E868A8 /* OpenEmuBase.framework */,
+				1058C7ACFEA557BF11CA2CBB /* Linked Frameworks */,
+				1058C7AEFEA557BF11CA2CBB /* Other Frameworks */,
+			);
+			name = "Frameworks and Libraries";
+			sourceTree = "<group>";
+		};
+		089C167CFE841241C02AAC07 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				82CAFAD90FEDA5CA00CCDC7E /* dsa_pub.pem */,
+				8D5B49B7048680CD000E48DA /* Info.plist */,
+				089C167DFE841241C02AAC07 /* InfoPlist.strings */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		08FB77AFFE84173DC02AAC07 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				C66DFC190F51D82F0080AA28 /* SMSGameCore.h */,
+				C66DFC180F51D82F0080AA28 /* SMSGameCore.mm */,
+				C6B3E67C1365255700D34947 /* OESMSSystemResponderClient.h */,
+				8291C4E21489595000A72540 /* OEGGSystemResponderClient.h */,
+				946C18AF171491B300C64BF9 /* OESG1000SystemResponderClient.h */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		1058C7ACFEA557BF11CA2CBB /* Linked Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */,
+			);
+			name = "Linked Frameworks";
+			sourceTree = "<group>";
+		};
+		1058C7AEFEA557BF11CA2CBB /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				089C167FFE841241C02AAC07 /* AppKit.framework */,
+				D2F7E65807B2D6F200F64583 /* CoreData.framework */,
+				089C1672FE841209C02AAC07 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		19C28FB8FE9D52D311CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8D5B49B6048680CD000E48DA /* TwoMbit.oecoreplugin */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		32C88E010371C26100C91783 /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				82CAFADD0FEDA5EA00CCDC7E /* config.yaml */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		8CEB52D8174B9D420073BA33 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				8CEB52D9174B9E960073BA33 /* chips */,
+				8CEB52E1174B9E960073BA33 /* lib */,
+				8CEB538C174B9E960073BA33 /* libsms */,
+				8CEB5391174B9E960073BA33 /* licence.txt */,
+				8CEB5392174B9E960073BA33 /* sms */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
+		8CEB52D9174B9E960073BA33 /* chips */ = {
+			isa = PBXGroup;
+			children = (
+				8CEB52DA174B9E960073BA33 /* z80 */,
+			);
+			path = chips;
+			sourceTree = "<group>";
+		};
+		8CEB52DA174B9E960073BA33 /* z80 */ = {
+			isa = PBXGroup;
+			children = (
+				8CEB52DB174B9E960073BA33 /* mem.h */,
+				8CEB52DC174B9E960073BA33 /* opcodes.t.h */,
+				8CEB52DD174B9E960073BA33 /* regs.h */,
+				8CEB52DE174B9E960073BA33 /* z80.cpp */,
+				8CEB52DF174B9E960073BA33 /* z80.h */,
+				8CEB52E0174B9E960073BA33 /* z80_serialization.cpp */,
+			);
+			path = z80;
+			sourceTree = "<group>";
+		};
+		8CEB52E1174B9E960073BA33 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				8CEB545E174C46480073BA33 /* resample */,
+				8CEB5456174C204F0073BA33 /* colorInterface */,
+				8CEB544A174BD78D0073BA33 /* blip_buffer */,
+				8CEB5316174B9E960073BA33 /* dataTypes.h */,
+				8CEB5333174B9E960073BA33 /* hashlibpp */,
+				8CEB5337174B9E960073BA33 /* helper.h */,
+				8CEB5338174B9E960073BA33 /* libco */,
+				8CEB5340174B9E960073BA33 /* serializer */,
+				8CEB5342174B9E960073BA33 /* sms_ntsc */,
+				8CEB534F174B9E960073BA33 /* string */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+		8CEB5333174B9E960073BA33 /* hashlibpp */ = {
+			isa = PBXGroup;
+			children = (
+				8CEB5334174B9E960073BA33 /* hl_md5.cpp */,
+				8CEB5335174B9E960073BA33 /* hl_md5.h */,
+				8CEB5336174B9E960073BA33 /* hl_types.h */,
+			);
+			path = hashlibpp;
+			sourceTree = "<group>";
+		};
+		8CEB5338174B9E960073BA33 /* libco */ = {
+			isa = PBXGroup;
+			children = (
+				8CEB5339174B9E960073BA33 /* amd64.c */,
+				8CEB533A174B9E960073BA33 /* fiber.c */,
+				8CEB533B174B9E960073BA33 /* libco.c */,
+				8CEB533C174B9E960073BA33 /* libco.h */,
+				8CEB533D174B9E960073BA33 /* ppc.c */,
+				8CEB533E174B9E960073BA33 /* sjlj.c */,
+				8CEB533F174B9E960073BA33 /* x86.c */,
+			);
+			path = libco;
+			sourceTree = "<group>";
+		};
+		8CEB5340174B9E960073BA33 /* serializer */ = {
+			isa = PBXGroup;
+			children = (
+				8CEB5341174B9E960073BA33 /* serializer.h */,
+			);
+			path = serializer;
+			sourceTree = "<group>";
+		};
+		8CEB5342174B9E960073BA33 /* sms_ntsc */ = {
+			isa = PBXGroup;
+			children = (
+				8CEB5343174B9E960073BA33 /* benchmark.c */,
+				8CEB5344174B9E960073BA33 /* changes.txt */,
+				8CEB5345174B9E960073BA33 /* demo.c */,
+				8CEB5346174B9E960073BA33 /* demo_impl.h */,
+				8CEB5347174B9E960073BA33 /* license.txt */,
+				8CEB5348174B9E960073BA33 /* readme.txt */,
+				8CEB5349174B9E960073BA33 /* sms_ntsc.c */,
+				8CEB534A174B9E960073BA33 /* sms_ntsc.h */,
+				8CEB534B174B9E960073BA33 /* sms_ntsc.txt */,
+				8CEB534C174B9E960073BA33 /* sms_ntsc_config.h */,
+				8CEB534D174B9E960073BA33 /* sms_ntsc_impl.h */,
+				8CEB534E174B9E960073BA33 /* test.bmp */,
+			);
+			path = sms_ntsc;
+			sourceTree = "<group>";
+		};
+		8CEB534F174B9E960073BA33 /* string */ = {
+			isa = PBXGroup;
+			children = (
+				8CEB5350174B9E960073BA33 /* _string.h */,
+				8CEB5351174B9E960073BA33 /* qstring.cpp */,
+				8CEB5352174B9E960073BA33 /* qstring.h */,
+			);
+			path = string;
+			sourceTree = "<group>";
+		};
+		8CEB538C174B9E960073BA33 /* libsms */ = {
+			isa = PBXGroup;
+			children = (
+				8CEB538D174B9E960073BA33 /* libsms.cpp */,
+				8CEB538E174B9E960073BA33 /* libsms.h */,
+				8CEB5390174B9E960073BA33 /* libsms_global.h */,
+			);
+			path = libsms;
+			sourceTree = "<group>";
+		};
+		8CEB5392174B9E960073BA33 /* sms */ = {
+			isa = PBXGroup;
+			children = (
+				8CEB5393174B9E960073BA33 /* apu */,
+				8CEB53A0174B9E960073BA33 /* bus */,
+				8CEB53A7174B9E960073BA33 /* cart */,
+				8CEB53AA174B9E960073BA33 /* cheats */,
+				8CEB53AD174B9E960073BA33 /* cpu */,
+				8CEB53B1174B9E960073BA33 /* gear2gear */,
+				8CEB53B4174B9E960073BA33 /* input */,
+				8CEB53B8174B9E960073BA33 /* mem.h */,
+				8CEB53B9174B9E960073BA33 /* processor.h */,
+				8CEB53BA174B9E960073BA33 /* system */,
+				8CEB53BF174B9E960073BA33 /* vdp */,
+			);
+			path = sms;
+			sourceTree = "<group>";
+		};
+		8CEB5393174B9E960073BA33 /* apu */ = {
+			isa = PBXGroup;
+			children = (
+				8CEB5394174B9E960073BA33 /* sn76489.cpp */,
+				8CEB5395174B9E960073BA33 /* sn76489.h */,
+				8CEB5396174B9E960073BA33 /* sn_serialization.cpp */,
+				8CEB5397174B9E960073BA33 /* ym2413 */,
+				8CEB539D174B9E960073BA33 /* ym2413.cpp */,
+				8CEB539E174B9E960073BA33 /* ym2413.h */,
+				8CEB539F174B9E960073BA33 /* ym_serialization.cpp */,
+			);
+			path = apu;
+			sourceTree = "<group>";
+		};
+		8CEB5397174B9E960073BA33 /* ym2413 */ = {
+			isa = PBXGroup;
+			children = (
+				8CEB5398174B9E960073BA33 /* ym2413Core.cpp */,
+				8CEB5399174B9E960073BA33 /* ym2413Core.h */,
+				8CEB539A174B9E960073BA33 /* ym2413Core_tables.cpp */,
+				8CEB539B174B9E960073BA33 /* ym2413Core_update.cpp */,
+				8CEB539C174B9E960073BA33 /* ymcore_serialization.cpp */,
+			);
+			path = ym2413;
+			sourceTree = "<group>";
+		};
+		8CEB53A0174B9E960073BA33 /* bus */ = {
+			isa = PBXGroup;
+			children = (
+				8CEB53A1174B9E960073BA33 /* bus.cpp */,
+				8CEB53A2174B9E960073BA33 /* bus.h */,
+				8CEB53A3174B9E960073BA33 /* bus_serialization.cpp */,
+				8CEB53A4174B9E960073BA33 /* eeprom_93c46.cpp */,
+				8CEB53A5174B9E960073BA33 /* eeprom_93c46.h */,
+				8CEB53A6174B9E960073BA33 /* eeprom_serialization.cpp */,
+			);
+			path = bus;
+			sourceTree = "<group>";
+		};
+		8CEB53A7174B9E960073BA33 /* cart */ = {
+			isa = PBXGroup;
+			children = (
+				8CEB53A8174B9E960073BA33 /* cart.cpp */,
+				8CEB53A9174B9E960073BA33 /* cart.h */,
+			);
+			path = cart;
+			sourceTree = "<group>";
+		};
+		8CEB53AA174B9E960073BA33 /* cheats */ = {
+			isa = PBXGroup;
+			children = (
+				8CEB53AB174B9E960073BA33 /* cheats.cpp */,
+				8CEB53AC174B9E960073BA33 /* cheats.h */,
+			);
+			path = cheats;
+			sourceTree = "<group>";
+		};
+		8CEB53AD174B9E960073BA33 /* cpu */ = {
+			isa = PBXGroup;
+			children = (
+				8CEB53AE174B9E960073BA33 /* cpu.cpp */,
+				8CEB53AF174B9E960073BA33 /* cpu.h */,
+				8CEB53B0174B9E960073BA33 /* cpu_serialization.cpp */,
+			);
+			path = cpu;
+			sourceTree = "<group>";
+		};
+		8CEB53B1174B9E960073BA33 /* gear2gear */ = {
+			isa = PBXGroup;
+			children = (
+				8CEB53B2174B9E960073BA33 /* gear2gear.cpp */,
+				8CEB53B3174B9E960073BA33 /* gear2gear.h */,
+			);
+			path = gear2gear;
+			sourceTree = "<group>";
+		};
+		8CEB53B4174B9E960073BA33 /* input */ = {
+			isa = PBXGroup;
+			children = (
+				8CEB53B5174B9E960073BA33 /* input.cpp */,
+				8CEB53B6174B9E960073BA33 /* input.h */,
+				8CEB53B7174B9E960073BA33 /* input_serialization.cpp */,
+			);
+			path = input;
+			sourceTree = "<group>";
+		};
+		8CEB53BA174B9E960073BA33 /* system */ = {
+			isa = PBXGroup;
+			children = (
+				8CEB53BB174B9E960073BA33 /* interface.h */,
+				8CEB53BC174B9E960073BA33 /* system.cpp */,
+				8CEB53BD174B9E960073BA33 /* system.h */,
+				8CEB53BE174B9E960073BA33 /* system_serialization.cpp */,
+			);
+			path = system;
+			sourceTree = "<group>";
+		};
+		8CEB53BF174B9E960073BA33 /* vdp */ = {
+			isa = PBXGroup;
+			children = (
+				8CEB53C0174B9E960073BA33 /* mode0.cpp */,
+				8CEB53C1174B9E960073BA33 /* mode2.cpp */,
+				8CEB53C2174B9E960073BA33 /* mode4.cpp */,
+				8CEB53C3174B9E960073BA33 /* vdp.cpp */,
+				8CEB53C4174B9E960073BA33 /* vdp.h */,
+				8CEB53C5174B9E960073BA33 /* vdp_serialization.cpp */,
+			);
+			path = vdp;
+			sourceTree = "<group>";
+		};
+		8CEB544A174BD78D0073BA33 /* blip_buffer */ = {
+			isa = PBXGroup;
+			children = (
+				8CEB544B174BD78E0073BA33 /* Blip_Buffer.cpp */,
+				8CEB544C174BD78E0073BA33 /* Blip_Buffer.h */,
+				8CEB544D174BD78E0073BA33 /* changes.txt */,
+				8CEB544E174BD78E0073BA33 /* LGPL.txt */,
+				8CEB544F174BD78E0073BA33 /* notes.txt */,
+				8CEB5450174BD78E0073BA33 /* readme.txt */,
+			);
+			path = blip_buffer;
+			sourceTree = "<group>";
+		};
+		8CEB5456174C204F0073BA33 /* colorInterface */ = {
+			isa = PBXGroup;
+			children = (
+				8CEB5457174C204F0073BA33 /* color.cpp */,
+				8CEB5458174C204F0073BA33 /* color.h */,
+				8CEB5459174C204F0073BA33 /* direct.cpp */,
+				8CEB545A174C204F0073BA33 /* ntsc.cpp */,
+			);
+			path = colorInterface;
+			sourceTree = "<group>";
+		};
+		8CEB545E174C46480073BA33 /* resample */ = {
+			isa = PBXGroup;
+			children = (
+				8CEB545F174C46490073BA33 /* resampler.cpp */,
+				8CEB5460174C46490073BA33 /* resampler.h */,
+			);
+			path = resample;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8D5B49AC048680CD000E48DA /* TwoMbit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1DEB913A08733D840010E9CD /* Build configuration list for PBXNativeTarget "TwoMbit" */;
+			buildPhases = (
+				8D5B49AF048680CD000E48DA /* Resources */,
+				8D5B49B1048680CD000E48DA /* Sources */,
+				8D5B49B3048680CD000E48DA /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TwoMbit;
+			productInstallPath = "$(HOME)/Library/Bundles";
+			productName = CrabEmu;
+			productReference = 8D5B49B6048680CD000E48DA /* TwoMbit.oecoreplugin */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		089C1669FE841209C02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 0460;
+			};
+			buildConfigurationList = 1DEB913E08733D840010E9CD /* Build configuration list for PBXProject "TwoMbit" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 089C166AFE841209C02AAC07 /* CrabEmu */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8D5B49AC048680CD000E48DA /* TwoMbit */,
+				82D8155D0F1D878700EF8CF5 /* Build & Install TwoMbit */,
+				82CAFB610FEDA62500CCDC7E /* Distribution */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8D5B49AF048680CD000E48DA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D5B49B0048680CD000E48DA /* InfoPlist.strings in Resources */,
+				82CAFADA0FEDA5CA00CCDC7E /* dsa_pub.pem in Resources */,
+				8CEB53FD174B9E960073BA33 /* changes.txt in Resources */,
+				8CEB53FF174B9E960073BA33 /* license.txt in Resources */,
+				8CEB5400174B9E960073BA33 /* readme.txt in Resources */,
+				8CEB5402174B9E960073BA33 /* sms_ntsc.txt in Resources */,
+				8CEB5403174B9E960073BA33 /* test.bmp in Resources */,
+				8CEB5427174B9E960073BA33 /* licence.txt in Resources */,
+				8CEB5452174BD78E0073BA33 /* changes.txt in Resources */,
+				8CEB5453174BD78E0073BA33 /* LGPL.txt in Resources */,
+				8CEB5454174BD78E0073BA33 /* notes.txt in Resources */,
+				8CEB5455174BD78E0073BA33 /* readme.txt in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		82CAFB600FEDA62500CCDC7E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = /usr/bin/openemu_rb_automation.rb;
+			showEnvVarsInLog = 0;
+		};
+		82D8155C0F1D878700EF8CF5 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "mkdir -p \"$USER_LIBRARY_DIR/Application Support/OpenEmu/Cores\"\nrm -rf \"$USER_LIBRARY_DIR/Application Support/OpenEmu/Cores/$PROJECT_NAME.oecoreplugin\"{,.dSYM}\ncp -rf \"$BUILT_PRODUCTS_DIR/$PROJECT_NAME.oecoreplugin\"{,.dSYM} \"$USER_LIBRARY_DIR/Application Support/OpenEmu/Cores/\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8D5B49B1048680CD000E48DA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C66DFC1A0F51D82F0080AA28 /* SMSGameCore.mm in Sources */,
+				8CEB53C6174B9E960073BA33 /* z80.cpp in Sources */,
+				8CEB53C7174B9E960073BA33 /* z80_serialization.cpp in Sources */,
+				8CEB53F5174B9E960073BA33 /* hl_md5.cpp in Sources */,
+				8CEB53F8174B9E960073BA33 /* libco.c in Sources */,
+				8CEB53FC174B9E960073BA33 /* benchmark.c in Sources */,
+				8CEB5401174B9E960073BA33 /* sms_ntsc.c in Sources */,
+				8CEB5425174B9E960073BA33 /* libsms.cpp in Sources */,
+				8CEB5428174B9E960073BA33 /* sn76489.cpp in Sources */,
+				8CEB5429174B9E960073BA33 /* sn_serialization.cpp in Sources */,
+				8CEB542A174B9E960073BA33 /* ym2413Core.cpp in Sources */,
+				8CEB542B174B9E960073BA33 /* ym2413Core_tables.cpp in Sources */,
+				8CEB542C174B9E960073BA33 /* ym2413Core_update.cpp in Sources */,
+				8CEB542D174B9E960073BA33 /* ymcore_serialization.cpp in Sources */,
+				8CEB542E174B9E960073BA33 /* ym2413.cpp in Sources */,
+				8CEB542F174B9E960073BA33 /* ym_serialization.cpp in Sources */,
+				8CEB5430174B9E960073BA33 /* bus.cpp in Sources */,
+				8CEB5431174B9E960073BA33 /* bus_serialization.cpp in Sources */,
+				8CEB5432174B9E960073BA33 /* eeprom_93c46.cpp in Sources */,
+				8CEB5433174B9E960073BA33 /* eeprom_serialization.cpp in Sources */,
+				8CEB5434174B9E960073BA33 /* cart.cpp in Sources */,
+				8CEB5435174B9E960073BA33 /* cheats.cpp in Sources */,
+				8CEB5436174B9E960073BA33 /* cpu.cpp in Sources */,
+				8CEB5437174B9E960073BA33 /* cpu_serialization.cpp in Sources */,
+				8CEB5438174B9E960073BA33 /* gear2gear.cpp in Sources */,
+				8CEB5439174B9E960073BA33 /* input.cpp in Sources */,
+				8CEB543A174B9E960073BA33 /* input_serialization.cpp in Sources */,
+				8CEB543B174B9E960073BA33 /* system.cpp in Sources */,
+				8CEB543C174B9E960073BA33 /* system_serialization.cpp in Sources */,
+				8CEB543D174B9E960073BA33 /* mode0.cpp in Sources */,
+				8CEB543E174B9E960073BA33 /* mode2.cpp in Sources */,
+				8CEB543F174B9E960073BA33 /* mode4.cpp in Sources */,
+				8CEB5440174B9E960073BA33 /* vdp.cpp in Sources */,
+				8CEB5441174B9E960073BA33 /* vdp_serialization.cpp in Sources */,
+				8CEB5451174BD78E0073BA33 /* Blip_Buffer.cpp in Sources */,
+				8CEB545B174C204F0073BA33 /* color.cpp in Sources */,
+				8CEB545C174C204F0073BA33 /* direct.cpp in Sources */,
+				8CEB545D174C204F0073BA33 /* ntsc.cpp in Sources */,
+				8CEB5461174C46490073BA33 /* resampler.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		82CAFB650FEDA62A00CCDC7E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8D5B49AC048680CD000E48DA /* TwoMbit */;
+			targetProxy = 82CAFB640FEDA62A00CCDC7E /* PBXContainerItemProxy */;
+		};
+		82D815610F1D879200EF8CF5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8D5B49AC048680CD000E48DA /* TwoMbit */;
+			targetProxy = 82D815600F1D879200EF8CF5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		089C167DFE841241C02AAC07 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				089C167EFE841241C02AAC07 /* English */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1DEB913B08733D840010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "\"$(USER_LIBRARY_DIR)/Application Support/OpenEmu/Cores\"";
+				OTHER_CFLAGS = "-DPROFILE_PERFORMANCE";
+				PRODUCT_NAME = TwoMbit;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = oecoreplugin;
+			};
+			name = Debug;
+		};
+		1DEB913C08733D840010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "\"$(USER_LIBRARY_DIR)/Application Support/OpenEmu/Cores\"";
+				OTHER_CFLAGS = "-DPROFILE_PERFORMANCE";
+				PRODUCT_NAME = TwoMbit;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = oecoreplugin;
+			};
+			name = Release;
+		};
+		1DEB913F08733D840010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEPLOYMENT_LOCATION = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
+				GCC_VERSION = "";
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "";
+				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				OTHER_CFLAGS = "";
+				SDKROOT = macosx;
+				VALID_ARCHS = x86_64;
+			};
+			name = Debug;
+		};
+		1DEB914008733D840010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEPLOYMENT_LOCATION = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
+				GCC_VERSION = "";
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "";
+				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				OTHER_CFLAGS = "";
+				SDKROOT = macosx;
+				VALID_ARCHS = x86_64;
+			};
+			name = Release;
+		};
+		82CAFB620FEDA62500CCDC7E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INSTALL_PATH = "\"$(USER_LIBRARY_DIR)/Application Support/OpenEmu/Cores\"";
+				PRODUCT_NAME = Distribution;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		82CAFB630FEDA62500CCDC7E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INSTALL_PATH = "\"$(USER_LIBRARY_DIR)/Application Support/OpenEmu/Cores\"";
+				PRODUCT_NAME = Distribution;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		82D8155E0F1D878800EF8CF5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INSTALL_PATH = "\"$(USER_LIBRARY_DIR)/Application Support/OpenEmu/Cores\"";
+				PRODUCT_NAME = "Build & Install";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		82D8155F0F1D878800EF8CF5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INSTALL_PATH = "\"$(USER_LIBRARY_DIR)/Application Support/OpenEmu/Cores\"";
+				PRODUCT_NAME = "Build & Install";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1DEB913A08733D840010E9CD /* Build configuration list for PBXNativeTarget "TwoMbit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB913B08733D840010E9CD /* Debug */,
+				1DEB913C08733D840010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1DEB913E08733D840010E9CD /* Build configuration list for PBXProject "TwoMbit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB913F08733D840010E9CD /* Debug */,
+				1DEB914008733D840010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		82CAFB710FEDA62C00CCDC7E /* Build configuration list for PBXAggregateTarget "Distribution" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				82CAFB620FEDA62500CCDC7E /* Debug */,
+				82CAFB630FEDA62500CCDC7E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		82D815710F1D87B000EF8CF5 /* Build configuration list for PBXAggregateTarget "Build & Install TwoMbit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				82D8155E0F1D878800EF8CF5 /* Debug */,
+				82D8155F0F1D878800EF8CF5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 089C1669FE841209C02AAC07 /* Project object */;
+}
