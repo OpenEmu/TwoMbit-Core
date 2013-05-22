@@ -42,12 +42,7 @@
 		8CEB53F5174B9E960073BA33 /* hl_md5.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8CEB5334174B9E960073BA33 /* hl_md5.cpp */; };
 		8CEB53F8174B9E960073BA33 /* libco.c in Sources */ = {isa = PBXBuildFile; fileRef = 8CEB533B174B9E960073BA33 /* libco.c */; };
 		8CEB53FC174B9E960073BA33 /* benchmark.c in Sources */ = {isa = PBXBuildFile; fileRef = 8CEB5343174B9E960073BA33 /* benchmark.c */; };
-		8CEB53FD174B9E960073BA33 /* changes.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8CEB5344174B9E960073BA33 /* changes.txt */; };
-		8CEB53FF174B9E960073BA33 /* license.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8CEB5347174B9E960073BA33 /* license.txt */; };
-		8CEB5400174B9E960073BA33 /* readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8CEB5348174B9E960073BA33 /* readme.txt */; };
 		8CEB5401174B9E960073BA33 /* sms_ntsc.c in Sources */ = {isa = PBXBuildFile; fileRef = 8CEB5349174B9E960073BA33 /* sms_ntsc.c */; };
-		8CEB5402174B9E960073BA33 /* sms_ntsc.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8CEB534B174B9E960073BA33 /* sms_ntsc.txt */; };
-		8CEB5403174B9E960073BA33 /* test.bmp in Resources */ = {isa = PBXBuildFile; fileRef = 8CEB534E174B9E960073BA33 /* test.bmp */; };
 		8CEB5425174B9E960073BA33 /* libsms.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8CEB538D174B9E960073BA33 /* libsms.cpp */; };
 		8CEB5427174B9E960073BA33 /* licence.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8CEB5391174B9E960073BA33 /* licence.txt */; };
 		8CEB5428174B9E960073BA33 /* sn76489.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8CEB5394174B9E960073BA33 /* sn76489.cpp */; };
@@ -77,10 +72,6 @@
 		8CEB5440174B9E960073BA33 /* vdp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8CEB53C3174B9E960073BA33 /* vdp.cpp */; };
 		8CEB5441174B9E960073BA33 /* vdp_serialization.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8CEB53C5174B9E960073BA33 /* vdp_serialization.cpp */; };
 		8CEB5451174BD78E0073BA33 /* Blip_Buffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8CEB544B174BD78E0073BA33 /* Blip_Buffer.cpp */; };
-		8CEB5452174BD78E0073BA33 /* changes.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8CEB544D174BD78E0073BA33 /* changes.txt */; };
-		8CEB5453174BD78E0073BA33 /* LGPL.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8CEB544E174BD78E0073BA33 /* LGPL.txt */; };
-		8CEB5454174BD78E0073BA33 /* notes.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8CEB544F174BD78E0073BA33 /* notes.txt */; };
-		8CEB5455174BD78E0073BA33 /* readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8CEB5450174BD78E0073BA33 /* readme.txt */; };
 		8CEB545B174C204F0073BA33 /* color.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8CEB5457174C204F0073BA33 /* color.cpp */; };
 		8CEB545C174C204F0073BA33 /* direct.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8CEB5459174C204F0073BA33 /* direct.cpp */; };
 		8CEB545D174C204F0073BA33 /* ntsc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8CEB545A174C204F0073BA33 /* ntsc.cpp */; };
@@ -659,16 +650,7 @@
 			files = (
 				8D5B49B0048680CD000E48DA /* InfoPlist.strings in Resources */,
 				82CAFADA0FEDA5CA00CCDC7E /* dsa_pub.pem in Resources */,
-				8CEB53FD174B9E960073BA33 /* changes.txt in Resources */,
-				8CEB53FF174B9E960073BA33 /* license.txt in Resources */,
-				8CEB5400174B9E960073BA33 /* readme.txt in Resources */,
-				8CEB5402174B9E960073BA33 /* sms_ntsc.txt in Resources */,
-				8CEB5403174B9E960073BA33 /* test.bmp in Resources */,
 				8CEB5427174B9E960073BA33 /* licence.txt in Resources */,
-				8CEB5452174BD78E0073BA33 /* changes.txt in Resources */,
-				8CEB5453174BD78E0073BA33 /* LGPL.txt in Resources */,
-				8CEB5454174BD78E0073BA33 /* notes.txt in Resources */,
-				8CEB5455174BD78E0073BA33 /* readme.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
