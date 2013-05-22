@@ -155,6 +155,28 @@ static signed inputCallback (unsigned port, unsigned deviceId, unsigned objectId
     
     smsPower();
 
+    NSString *extensionlessFilename = [[romName lastPathComponent] stringByDeletingPathExtension];
+    NSString *batterySavesDirectory = [self batterySavesDirectoryPath];
+
+    if([batterySavesDirectory length] != 0)
+    {
+        [[NSFileManager defaultManager] createDirectoryAtPath:batterySavesDirectory withIntermediateDirectories:YES attributes:nil error:NULL];
+        NSString *filePath = [batterySavesDirectory stringByAppendingPathComponent:[extensionlessFilename stringByAppendingPathExtension:@"sav"]];
+
+        FILE *batteryFile = fopen([filePath UTF8String], "rb");
+
+        if(batteryFile)
+        {
+            unsigned int   memorySize = smsGetMemorySize(SMS_MEMORY_SRAM);
+            unsigned char *memoryData = smsGetMemoryData(SMS_MEMORY_SRAM);
+
+            if(fread(memoryData, sizeof(unsigned char), memorySize, batteryFile) != memorySize)
+                NSLog(@"Did not load SRAM properly");
+        }
+
+        fclose(batteryFile);
+    }
+
     return YES;
 }
 
@@ -165,10 +187,30 @@ static signed inputCallback (unsigned port, unsigned deviceId, unsigned objectId
 
 - (void)stopEmulation
 {
+    NSString *extensionlessFilename = [[romName lastPathComponent] stringByDeletingPathExtension];
+    NSString *batterySavesDirectory = [self batterySavesDirectoryPath];
+
+    if([batterySavesDirectory length] != 0)
+    {
+        [[NSFileManager defaultManager] createDirectoryAtPath:batterySavesDirectory withIntermediateDirectories:YES attributes:nil error:NULL];
+        NSString *filePath = [batterySavesDirectory stringByAppendingPathComponent:[extensionlessFilename stringByAppendingPathExtension:@"sav"]];
+
+        unsigned int   memorySize = smsGetMemorySize(SMS_MEMORY_SRAM);
+        unsigned char *memoryData = smsGetMemoryData(SMS_MEMORY_SRAM);
+
+        FILE  *batteryFile  = fopen([filePath UTF8String], "wb");
+        if(fwrite(memoryData, sizeof(unsigned char), memorySize, batteryFile) != memorySize)
+            NSLog(@"Did not save SRAM properly");
+        
+        fclose(batteryFile);
+    }
+
     smsUnload();
     
     [super stopEmulation];
 }
+
+#pragma mark Video
 
 - (OEIntRect)screenRect
 {
@@ -205,6 +247,8 @@ static signed inputCallback (unsigned port, unsigned deviceId, unsigned objectId
     return GL_RGB8;
 }
 
+#pragma mark Audio
+
 - (NSUInteger)audioBufferCount
 {
     return 2;
@@ -219,6 +263,8 @@ static signed inputCallback (unsigned port, unsigned deviceId, unsigned objectId
 {
     return 2;
 }
+
+#pragma mark Save States
 
 - (BOOL)saveStateToFileAtPath:(NSString *)fileName
 {
@@ -275,7 +321,7 @@ static signed inputCallback (unsigned port, unsigned deviceId, unsigned objectId
     return YES;
 }
 
-#pragma mark Core Input
+#pragma mark Input
 
 - (oneway void)didPushSMSButton:(OESMSButton)button forPlayer:(NSUInteger)player
 {
