@@ -33,8 +33,11 @@
 #import "color.h"
 #import "resampler.h"
 
+enum systemTypes{ SMS, GG };
+
 @interface SMSGameCore () <OESMSSystemResponderClient>
 {
+    int           systemType;
     uint16_t      controllerMask1;
     uint16_t      controllerMask2;
     bool          systemPause;
@@ -108,8 +111,7 @@ static signed inputCallback (unsigned port, unsigned deviceId, unsigned objectId
     if(self != nil)
     {
         videoBuffer     = (unsigned int *) malloc(262 * 240 * sizeof(unsigned int));
-        width           = 256;
-        height          = 201;
+
         controllerMask1 = 0;
         controllerMask2 = 0;
         
@@ -143,15 +145,32 @@ static signed inputCallback (unsigned port, unsigned deviceId, unsigned objectId
 
 - (BOOL)loadFileAtPath:(NSString*)path
 {
-    romName = [path copy];
+    NSString *systemIdentifier = [self systemIdentifier];
 
+    if([systemIdentifier isEqualToString:@"openemu.system.sms"])
+    {
+        systemType = SMS;
+        width      = 256;
+        height     = 225;
+    }
+    else if([systemIdentifier isEqualToString:@"openemu.system.gg"])
+    {
+        systemType = GG;
+        width      = 160;
+        height     = 144;
+    }
+
+    romName = [path copy];
     rom = [NSData dataWithContentsOfFile:[romName stringByStandardizingPath]];
     if(rom == nil) return NO;
 
     unsigned int size = [rom length];
     uint8_t *data = (uint8_t *)[rom bytes];
 
-    smsLoad(data, size);
+    if(systemType == SMS)
+        smsLoad(data, size);
+    if(systemType == GG)
+        smsLoadGameGear(data, size, GG_MODE_NORMAL);
     
     smsPower();
 
@@ -219,7 +238,7 @@ static signed inputCallback (unsigned port, unsigned deviceId, unsigned objectId
 
 - (OEIntSize)bufferSize
 {
-    return OEIntSizeMake(262, 240);
+    return systemType == SMS ? OEIntSizeMake(262, 240) : OEIntSizeMake(160, 144);
 }
 
 - (OEIntSize)aspectSize
