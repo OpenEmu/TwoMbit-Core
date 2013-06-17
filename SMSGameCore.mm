@@ -69,7 +69,12 @@ void videoCallback(const unsigned short* frame, unsigned width, unsigned height,
 
 static void audioCallback(signed sampleLeft, signed sampleRight, unsigned soundChip)
 {
-    if(soundChip == SMS_SOUND_YM2413)
+    if(soundChip == SMS_SOUND_SN76489)
+    {
+        [[current ringBufferAtIndex:0] write:&sampleLeft maxLength:2];
+        [[current ringBufferAtIndex:0] write:&sampleRight maxLength:2];
+    }
+    else if(soundChip == SMS_SOUND_YM2413)
     {   
         signed samples[] = { sampleLeft, sampleRight };
         current->resampler.sample(samples);
@@ -81,8 +86,8 @@ static void audioCallback(signed sampleLeft, signed sampleRight, unsigned soundC
     }
     else
     {
-        [[current ringBufferAtIndex:0] write:&sampleLeft maxLength:2];
-        [[current ringBufferAtIndex:0] write:&sampleRight maxLength:2];
+        [[current ringBufferAtIndex:1] write:&sampleLeft maxLength:2];
+        [[current ringBufferAtIndex:1] write:&sampleRight maxLength:2];
     }
 }
 
@@ -275,7 +280,10 @@ static signed inputCallback (unsigned port, unsigned deviceId, unsigned objectId
 
 - (double)audioSampleRateForBuffer:(NSUInteger)buffer
 {
-    return 44100;
+    if(buffer == 0)
+        return 44135;
+    else
+        return 44157;
 }
 
 - (NSUInteger)channelCountForBuffer:(NSUInteger)buffer
