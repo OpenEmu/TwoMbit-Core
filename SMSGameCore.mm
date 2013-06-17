@@ -28,6 +28,7 @@
 #import "SMSGameCore.h"
 #import <OpenEmuBase/OERingBuffer.h>
 #import "OESMSSystemResponderClient.h"
+#import <OpenGL/gl.h>
 
 #import "libsms.h"
 #import "color.h"
