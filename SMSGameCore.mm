@@ -26,8 +26,9 @@
  */
 
 #import "SMSGameCore.h"
-#import <OpenEmuBase/OERingBuffer.h>
 #import "OESMSSystemResponderClient.h"
+#import "OEGGSystemResponderClient.h"
+#import <OpenEmuBase/OERingBuffer.h>
 #import <OpenGL/gl.h>
 
 #import "libsms.h"
@@ -36,7 +37,7 @@
 
 enum systemTypes{ SMS, GG };
 
-@interface SMSGameCore () <OESMSSystemResponderClient>
+@interface SMSGameCore () <OESMSSystemResponderClient, OEGGSystemResponderClient>
 {
     int           systemType;
     uint16_t      controllerMask1;
@@ -376,6 +377,16 @@ static signed inputCallback (unsigned port, unsigned deviceId, unsigned objectId
 - (oneway void)didReleaseSMSStartButton
 {
     systemPause = false;
+}
+
+- (oneway void)didPushGGButton:(OEGGButton)button
+{
+    controllerMask1 |= 1 << button;
+}
+
+- (oneway void)didReleaseGGButton:(OEGGButton)button
+{
+    controllerMask1 &= ~(1 << button);
 }
 
 @end
