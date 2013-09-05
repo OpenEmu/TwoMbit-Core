@@ -290,60 +290,51 @@ static signed inputCallback (unsigned port, unsigned deviceId, unsigned objectId
 
 #pragma mark Save States
 
-- (BOOL)saveStateToFileAtPath:(NSString *)fileName
+- (void)saveStateToFileAtPath:(NSString *)fileName completionHandler:(void (^)(BOOL, NSError *))block
 {
-    unsigned int   saveStateSize = smsSavestateSize();
-    unsigned char *saveStateData = (unsigned char *) malloc(saveStateSize);
+    int saveStateSize = smsSavestateSize();
+    NSMutableData *stateData = [NSMutableData dataWithLength:saveStateSize];
 
-    if(!smsSaveState(saveStateData, saveStateSize))
-    {
-        NSLog(@"Couldn't save state");
-        return NO;
-    }
+    smsSaveState((unsigned char *)[stateData mutableBytes], saveStateSize);
 
-    FILE  *saveStateFile = fopen([fileName UTF8String], "wb");
-    size_t bytesWritten  = fwrite(saveStateData, sizeof(unsigned char), saveStateSize, saveStateFile);
+    __autoreleasing NSError *error = nil;
+    BOOL success = [stateData writeToFile:fileName options:NSDataWritingAtomic error:&error];
 
-    free(saveStateData);
-
-    if(bytesWritten != saveStateSize)
-    {
-        NSLog(@"Couldn't write save state");
-        return NO;
-    }
-    
-    fclose(saveStateFile);
-    return YES;
+    block(success, success ? nil : error);
 }
 
-- (BOOL)loadStateFromFileAtPath:(NSString *)fileName
+- (void)loadStateFromFileAtPath:(NSString *)fileName completionHandler:(void (^)(BOOL, NSError *))block
 {
-    FILE *saveStateFile = fopen([fileName UTF8String], "rb");
-    if(!saveStateFile)
+    __autoreleasing NSError *error = nil;
+    NSData *data = [NSData dataWithContentsOfFile:fileName options:NSDataReadingMappedIfSafe | NSDataReadingUncached error:&error];
+
+    if(data == nil)
     {
-        NSLog(@"Could not open save state file");
-        return NO;
+        block(NO, error);
+        return;
     }
 
-    unsigned int saveStateSize   = smsSavestateSize();
-    unsigned char *saveStateData = (unsigned char *) malloc(saveStateSize);
-
-    if(!fread(saveStateData, sizeof(uint8_t), saveStateSize, saveStateFile))
+    int saveStateSize = smsSavestateSize();
+    if(saveStateSize != [data length])
     {
-        NSLog(@"Couldn't read file");
-        return NO;
-    }
-    fclose(saveStateFile);
-
-    if(!smsLoadState(saveStateData, saveStateSize))
-    {
-        NSLog(@"Couldn't load save state");
-        return NO;
+        // FIXME: Provide constants for error handling in OpenEmu SDK.
+        NSError *error = [NSError errorWithDomain:@"org.openemu.GameCore.Load" code:-10 userInfo:
+                          @{ NSLocalizedDescriptionKey : [NSString stringWithFormat:@"The size of the file %@ does not have the right size, %d expected, got: %ld.", fileName, saveStateSize, [data length]] }];
+        block(NO, error);
+        return;
     }
 
-    free(saveStateData);
-    return YES;
+    if(!smsLoadState((unsigned char *)[data bytes], saveStateSize))
+    {
+        NSError *error = [NSError errorWithDomain:@"org.openemu.GameCore.Load" code:-10 userInfo:
+                          @{ NSLocalizedDescriptionKey : [NSString stringWithFormat:@"Could not read the file state in %@.", fileName] }];
+        block(NO, error);
+        return;
+    }
+
+    block(YES, nil);
 }
+
 
 #pragma mark Input
 
