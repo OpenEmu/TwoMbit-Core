@@ -55,12 +55,14 @@ enum systemTypes{ SMS, GG };
 
 @implementation SMSGameCore
 
-static SMSGameCore *current;
+static __weak SMSGameCore *_current;
 
 #pragma mark Callbacks
 
 void videoCallback(const unsigned short* frame, unsigned width, unsigned height, unsigned modeId, bool secondGG)
 {
+    GET_CURRENT_AND_RETURN();
+
     current->width = width;
     current->height = height;
     
@@ -71,6 +73,8 @@ void videoCallback(const unsigned short* frame, unsigned width, unsigned height,
 
 static void audioCallback(signed sampleLeft, signed sampleRight, unsigned soundChip)
 {
+    GET_CURRENT_AND_RETURN();
+
     if(soundChip == SMS_SOUND_SN76489)
     {
         [[current ringBufferAtIndex:0] write:&sampleLeft maxLength:2];
@@ -95,6 +99,8 @@ static void audioCallback(signed sampleLeft, signed sampleRight, unsigned soundC
 
 static signed inputCallback (unsigned port, unsigned deviceId, unsigned objectId)
 {
+    GET_CURRENT_AND_RETURN(0);
+
     if(deviceId == SMS_DEVICE_JOYPAD)
     {
         if(port == SMS_PORT_1)
@@ -122,7 +128,7 @@ static signed inputCallback (unsigned port, unsigned deviceId, unsigned objectId
         controllerMask1 = 0;
         controllerMask2 = 0;
         
-        current = self;
+        _current = self;
     }
     return self;
 }
