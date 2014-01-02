@@ -254,6 +254,11 @@ static signed inputCallback (unsigned port, unsigned deviceId, unsigned objectId
     return systemType == SMS ? OEIntSizeMake(262, 240) : OEIntSizeMake(160, 144);
 }
 
+- (OEIntSize)aspectSize
+{
+    return systemType == GG ? OEIntSizeMake(10, 9) : OEIntSizeMake(4, 3);
+}
+
 - (const void *)videoBuffer
 {
     return videoBuffer;
