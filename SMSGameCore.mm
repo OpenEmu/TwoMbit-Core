@@ -156,7 +156,7 @@ static signed inputCallback (unsigned port, unsigned deviceId, unsigned objectId
     resampler.setFrequency(49716.0, 44100.0);
 }
 
-- (BOOL)loadFileAtPath:(NSString*)path
+- (BOOL)loadFileAtPath:(NSString *)path error:(NSError **)error
 {
     NSString *systemIdentifier = [self systemIdentifier];
 
