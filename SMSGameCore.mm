@@ -61,7 +61,7 @@ static __weak SMSGameCore *_current;
 
 void videoCallback(const unsigned short* frame, unsigned width, unsigned height, unsigned modeId, bool secondGG)
 {
-    GET_CURRENT_AND_RETURN();
+    GET_CURRENT_OR_RETURN();
 
     current->width = width;
     current->height = height;
@@ -73,7 +73,7 @@ void videoCallback(const unsigned short* frame, unsigned width, unsigned height,
 
 static void audioCallback(signed sampleLeft, signed sampleRight, unsigned soundChip)
 {
-    GET_CURRENT_AND_RETURN();
+    GET_CURRENT_OR_RETURN();
 
     if(soundChip == SMS_SOUND_SN76489)
     {
@@ -99,7 +99,7 @@ static void audioCallback(signed sampleLeft, signed sampleRight, unsigned soundC
 
 static signed inputCallback (unsigned port, unsigned deviceId, unsigned objectId)
 {
-    GET_CURRENT_AND_RETURN(0);
+    GET_CURRENT_OR_RETURN(0);
 
     if(deviceId == SMS_DEVICE_JOYPAD)
     {
