@@ -307,64 +307,43 @@ static signed inputCallback (unsigned port, unsigned deviceId, unsigned objectId
     unsigned char *bytes = (unsigned char *)malloc(length);
     
     if(smsSaveState(bytes, length))
-    {
         return [NSData dataWithBytesNoCopy:(void *)bytes length:length];
+
+    if(outError) {
+        *outError = [NSError errorWithDomain:OEGameCoreErrorDomain code:OEGameCoreCouldNotSaveStateError userInfo:@{
+            NSLocalizedDescriptionKey : @"Save state data could not be written",
+            NSLocalizedRecoverySuggestionErrorKey : @"The emulator could not write the state data."
+        }];
     }
-    else
-    {
-        if(outError)
-        {
-            
-            *outError = [NSError errorWithDomain:OEGameCoreErrorDomain
-                                            code:OEGameCoreCouldNotSaveStateError
-                                        userInfo:@{
-                                                   NSLocalizedDescriptionKey : @"Save state data could not be written",
-                                                   NSLocalizedRecoverySuggestionErrorKey : @"The emulator could not write the state data."
-                                                   }];
-        }
-        
-        return nil;
-    }
+    
+    return nil;
 }
 
 - (BOOL)deserializeState:(NSData *)state withError:(NSError **)outError
 {
     size_t saveStateSize = smsSavestateSize();
-    if(saveStateSize != [state length])
-    {
-        if(outError)
-        {
-            *outError = [NSError errorWithDomain:OEGameCoreErrorDomain
-                                            code:OEGameCoreStateHasWrongSizeError
-                                        userInfo:@{
-                                                   NSLocalizedDescriptionKey : @"Save state data has the wrong size.",
-                                                   NSLocalizedRecoverySuggestionErrorKey : [NSString stringWithFormat:@"The size of the save state does not have the right size, %ld expected, got: %ld.", saveStateSize, [state length]]
-                                                   }];
+    if(saveStateSize != [state length]) {
+        if(outError) {
+            *outError = [NSError errorWithDomain:OEGameCoreErrorDomain code:OEGameCoreStateHasWrongSizeError userInfo:@{
+                NSLocalizedDescriptionKey : @"Save state data has the wrong size.",
+                NSLocalizedRecoverySuggestionErrorKey : [NSString stringWithFormat:@"The size of the save state does not have the right size, %ld expected, got: %ld.", saveStateSize, [state length]]
+            }];
         }
         
         return NO;
     }
-    
-    
-    
+
     if(smsLoadState((unsigned char *)[state bytes], saveStateSize))
-    {
         return YES;
+
+    if(outError) {
+        *outError = [NSError errorWithDomain:OEGameCoreErrorDomain code:OEGameCoreCouldNotLoadStateError userInfo:@{
+            NSLocalizedDescriptionKey : @"The save state data could not be read",
+            NSLocalizedRecoverySuggestionErrorKey : @"Could not read the save state data."
+        }];
     }
-    else
-    {
-        if(outError)
-        {
-            *outError = [NSError errorWithDomain:OEGameCoreErrorDomain
-                                            code:OEGameCoreCouldNotLoadStateError
-                                        userInfo:@{
-                                                   NSLocalizedDescriptionKey : @"The save state data could not be read",
-                                                   NSLocalizedRecoverySuggestionErrorKey : @"Could not read the save state data."
-                                                   }];
-        }
-        
-        return NO;
-    }
+
+    return NO;
 }
 
 - (void)saveStateToFileAtPath:(NSString *)fileName completionHandler:(void (^)(BOOL, NSError *))block
@@ -372,8 +351,7 @@ static signed inputCallback (unsigned port, unsigned deviceId, unsigned objectId
     int saveStateSize = smsSavestateSize();
     NSMutableData *stateData = [NSMutableData dataWithLength:saveStateSize];
 
-    if(!smsSaveState((unsigned char *)[stateData mutableBytes], saveStateSize))
-    {
+    if(!smsSaveState((unsigned char *)[stateData mutableBytes], saveStateSize)) {
         NSError *error = [NSError errorWithDomain:OEGameCoreErrorDomain code:OEGameCoreCouldNotSaveStateError userInfo:@{
             NSLocalizedDescriptionKey : @"Save state data could not be written",
             NSLocalizedRecoverySuggestionErrorKey : @"The emulator could not write the state data."
@@ -382,26 +360,23 @@ static signed inputCallback (unsigned port, unsigned deviceId, unsigned objectId
         return;
     }
 
-    __autoreleasing NSError *error = nil;
+    NSError *error = nil;
     BOOL success = [stateData writeToFile:fileName options:NSDataWritingAtomic error:&error];
-
     block(success, success ? nil : error);
 }
 
 - (void)loadStateFromFileAtPath:(NSString *)fileName completionHandler:(void (^)(BOOL, NSError *))block
 {
-    __autoreleasing NSError *error = nil;
+    NSError *error;
     NSData *data = [NSData dataWithContentsOfFile:fileName options:NSDataReadingMappedIfSafe | NSDataReadingUncached error:&error];
 
-    if(data == nil)
-    {
+    if(data == nil) {
         block(NO, error);
         return;
     }
 
     int saveStateSize = smsSavestateSize();
-    if(saveStateSize != [data length])
-    {
+    if(saveStateSize != [data length]) {
         NSError *error = [NSError errorWithDomain:OEGameCoreErrorDomain code:OEGameCoreStateHasWrongSizeError userInfo:@{
             NSLocalizedDescriptionKey : @"Save state has wrong file size.",
             NSLocalizedRecoverySuggestionErrorKey : [NSString stringWithFormat:@"The size of the file %@ does not have the right size, %d expected, got: %ld.", fileName, saveStateSize, [data length]],
@@ -410,8 +385,7 @@ static signed inputCallback (unsigned port, unsigned deviceId, unsigned objectId
         return;
     }
 
-    if(!smsLoadState((unsigned char *)[data bytes], saveStateSize))
-    {
+    if(!smsLoadState((unsigned char *)[data bytes], saveStateSize)) {
         NSError *error = [NSError errorWithDomain:OEGameCoreErrorDomain code:OEGameCoreCouldNotLoadStateError userInfo:@{
             NSLocalizedDescriptionKey : @"The save state data could not be read",
             NSLocalizedRecoverySuggestionErrorKey : [NSString stringWithFormat:@"Could not read the file state in %@.", fileName]
@@ -422,7 +396,6 @@ static signed inputCallback (unsigned port, unsigned deviceId, unsigned objectId
 
     block(YES, nil);
 }
-
 
 #pragma mark Input
 
@@ -443,10 +416,12 @@ static signed inputCallback (unsigned port, unsigned deviceId, unsigned objectId
 }
 
 - (oneway void)didPushSMSResetButton
-{}
+{
+}
 
 - (oneway void)didReleaseSMSResetButton
-{}
+{
+}
 
 - (oneway void)didPushSMSStartButton
 {
