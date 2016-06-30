@@ -27,7 +27,7 @@
 		<key>openemu.system.gg</key>
 		<dict>
 			<key>OEGameCoreRewindBufferSeconds</key>
-			<integer>3600</integer>
+			<integer>60</integer>
 			<key>OEGameCoreRewindInterval</key>
 			<integer>0</integer>
 			<key>OEGameCoreSupportsRewinding</key>
@@ -36,7 +36,7 @@
 		<key>openemu.system.sms</key>
 		<dict>
 			<key>OEGameCoreRewindBufferSeconds</key>
-			<integer>3600</integer>
+			<integer>60</integer>
 			<key>OEGameCoreRewindInterval</key>
 			<integer>0</integer>
 			<key>OEGameCoreSupportsRewinding</key>
