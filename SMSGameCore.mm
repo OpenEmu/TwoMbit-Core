@@ -259,9 +259,9 @@ static signed inputCallback (unsigned port, unsigned deviceId, unsigned objectId
     return systemType == GG ? OEIntSizeMake(10, 9) : OEIntSizeMake(4, 3);
 }
 
-- (const void *)videoBuffer
+- (const void *)getVideoBufferWithHint:(void *)hint
 {
-    return videoBuffer;
+	return videoBuffer = (unsigned int *)(hint ?: videoBuffer);
 }
 
 - (GLenum)pixelFormat
@@ -272,11 +272,6 @@ static signed inputCallback (unsigned port, unsigned deviceId, unsigned objectId
 - (GLenum)pixelType
 {
     return GL_UNSIGNED_INT_8_8_8_8_REV;
-}
-
-- (GLenum)internalPixelFormat
-{
-    return GL_RGB8;
 }
 
 #pragma mark Audio
