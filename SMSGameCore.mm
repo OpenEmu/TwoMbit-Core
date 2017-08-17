@@ -195,7 +195,7 @@ static signed inputCallback (unsigned port, unsigned deviceId, unsigned objectId
         [[NSFileManager defaultManager] createDirectoryAtPath:batterySavesDirectory withIntermediateDirectories:YES attributes:nil error:NULL];
         NSString *filePath = [batterySavesDirectory stringByAppendingPathComponent:[extensionlessFilename stringByAppendingPathExtension:@"sav"]];
 
-        FILE *batteryFile = fopen([filePath UTF8String], "rb");
+        FILE *batteryFile = fopen(filePath.fileSystemRepresentation, "rb");
 
         if(batteryFile)
         {
@@ -230,7 +230,7 @@ static signed inputCallback (unsigned port, unsigned deviceId, unsigned objectId
         unsigned int   memorySize = smsGetMemorySize(SMS_MEMORY_SRAM);
         unsigned char *memoryData = smsGetMemoryData(SMS_MEMORY_SRAM);
 
-        FILE  *batteryFile  = fopen([filePath UTF8String], "wb");
+        FILE  *batteryFile  = fopen(filePath.fileSystemRepresentation, "wb");
         if(fwrite(memoryData, sizeof(unsigned char), memorySize, batteryFile) != memorySize)
             NSLog(@"Did not save SRAM properly");
         
